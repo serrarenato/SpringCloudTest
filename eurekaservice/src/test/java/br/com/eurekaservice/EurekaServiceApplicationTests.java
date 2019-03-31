@@ -1,4 +1,4 @@
-package hello;
+package br.com.eurekaservice;
 
 import static org.assertj.core.api.BDDAssertions.*;
 
