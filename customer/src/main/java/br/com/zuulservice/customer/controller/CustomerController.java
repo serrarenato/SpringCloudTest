@@ -1,4 +1,4 @@
-package br.com.customer.controller;
+package br.com.zuulservice.customer.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ public class CustomerController {
 
     @GetMapping
     public List<String> findAll() {
-        return new ArrayList<>(Arrays.asList(CUSTOMERS));
+        return new ArrayList<String>(Arrays.asList(CUSTOMERS));
     }
 
    }

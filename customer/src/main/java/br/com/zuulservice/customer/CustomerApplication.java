@@ -1,4 +1,4 @@
-package br.com.customer;
+package br.com.zuulservice.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
