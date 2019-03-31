@@ -22,11 +22,11 @@ public class EurekaServiceApplicationTests {
     @Autowired
     private TestRestTemplate testRestTemplate;
 
-    @Test
+ /*   @Test
     public void shouldStartEurekaServer() {
         ResponseEntity<String> entity = this.testRestTemplate.getForEntity(
                 "http://localhost:" + this.port + "/eureka/apps", String.class);
 
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
-    }
+    }*/
 }
