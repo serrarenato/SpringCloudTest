@@ -1,5 +1,6 @@
-# spring-cloud-netflix-proxy-apis
-[Criando proxy de APIs com Spring cloud, Zuul e Eureka](https://wp.me/p5RSbg-kW)
+# Spring Cloud Test
+
+A simple project with Eureka, Zuul and 2 microservices, Customer and Product, both are registred in Eureka and Zuul.
 
 ## Pré requisito
 - Maven 3
@@ -7,13 +8,13 @@
 
 ## Preparando ambiente
 
-- ```cd spring-cloud-netflix-proxy-apis```
+- ```cd springcloudtest```
 - ```mvn clean package```
 
 ## Executando 
 
 Service Discovery (Eureka)
-- ```cd eureka```
+- ```cd eureka-service```
 - ```mvn spring-boot:run```
 
 Proxy (Zuul)
@@ -21,31 +22,32 @@ Proxy (Zuul)
 - ```mvn spring-boot:run```
 
 API de Customers
-- ```cd customers```
+- ```cd customer```
 - ```mvn spring-boot:run```
 
 API de Products
-- ```cd products```
+- ```cd product```
 - ```mvn spring-boot:run```
 
 
-Acessando Eureka: http://localhost:8761
+Acessando Eureka: http://localhost:7777
+I change default port of Eureka(8761) only to test.
 ````
 Instances currently registered with Eureka
 
 Application	AMIs	Availability Zones	Status
-CUSTOMERS	n/a (1)	(1)	UP (1) - 192.168.11.247:customers:8060
-PRODUCTS	n/a (1)	(1)	UP (1) - 192.168.11.247:products:8070
+CUSTOMER	n/a (1)	(1)	UP (1) - 192.168.11.247:customers:8060
+PRODUCT	n/a (1)	(1)	UP (1) - 192.168.11.247:products:8070
 ZUUL	      n/a (1)	(1)	UP (1) - 192.168.11.247:zuul:8080
 ````
 
 ## Acessando APIs
 
 #### Diretamente
-- http://localhost:8070/products
-- http://localhost:8060/customers
+- http://localhost:8070/product
+- http://localhost:8060/customer
 
 #### Via Proxy (Zuul)
-- http://localhost:8080/api/products
-- http://localhost:8080/api/customers
+- http://localhost:8080/api/product
+- http://localhost:8080/api/customer
 
