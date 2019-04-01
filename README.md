@@ -36,18 +36,17 @@ I change default port of Eureka(8761) only to test.
 Instances currently registered with Eureka
 
 Application	AMIs	Availability Zones	Status
-CUSTOMER	n/a (1)	(1)	UP (1) - 192.168.11.247:customers:8060
-PRODUCT	n/a (1)	(1)	UP (1) - 192.168.11.247:products:8070
-ZUUL	      n/a (1)	(1)	UP (1) - 192.168.11.247:zuul:8080
-````
+CUSTOMER	n/a (1)	(1)	UP (1) - 10.0.2.86:customer:8080
+PRODUCT	n/a (1)	(1)	UP (1) - 10.0.2.86:product:8181
+ZUUL-SERVER	n/a (1)	(1)	UP (1) - 10.0.2.86:zuul-server:8082````
 
 ## Acessando APIs
 
 #### Diretamente
-- http://localhost:8070/product
-- http://localhost:8060/customer
+- http://localhost:8181/products
+- http://localhost:8080/customers
 
 #### Via Proxy (Zuul)
-- http://localhost:8080/api/product
-- http://localhost:8080/api/customer
+- http://localhost:8082/api/product/products/
+- http://localhost:8082/api/customer/customers/
 
