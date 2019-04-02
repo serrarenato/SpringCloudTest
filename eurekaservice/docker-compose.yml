@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+   eureka-server:
+      build:
+        context: .
+        dockerfile: Dockerfile
+        args:
+          IBK_VERSION: latest
+          IBK_PROFILE: renatoserra
+      image: mtr/renatoserra/eureka-server:latest
