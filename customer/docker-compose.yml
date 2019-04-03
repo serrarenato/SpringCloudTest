@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  customer:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: customer
+      ports:
+        - 8080:8080
+      environment:
+        - EUREKA_URI=http://eureka-server:7777
+
+

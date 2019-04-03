@@ -6,13 +6,13 @@ RUN mkdir -p /opt/springcloudtest/work
 WORKDIR /opt/springcloudtest/work
 
 
-ADD /target/eureka-server.jar /opt/springcloudtest/work/eureka-server.jar
+ADD /target/springmonitor.jar /opt/springcloudtest/work/springmonitor.jar
 
 
-EXPOSE 7777
+EXPOSE 7771
 
 #copying module and executing
 
 
 
-ENTRYPOINT [ "java", "-jar", "eureka-server.jar"]
+ENTRYPOINT [ "java", "-jar", "springmonitor.jar"]

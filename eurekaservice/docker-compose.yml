@@ -5,7 +5,6 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
-        args:
-          IBK_VERSION: latest
-          IBK_PROFILE: renatoserra
-      image: mtr/renatoserra/eureka-server:latest
+      image: eureka-server
+      ports:
+        - 7777:7777
