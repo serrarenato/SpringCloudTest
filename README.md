@@ -29,6 +29,13 @@ API de Products
 - ```cd product```
 - ```mvn spring-boot:run```
 
+API de SpringMonitor
+- ```cd springmonitor```
+- ```mvn spring-boot:run```
+
+Ou se preferir pode ser usado o docker para subir todos so microserviços:
+docker-compose up -d
+
 
 Acessando Eureka: http://localhost:7777
 I change default port of Eureka(8761) only to test.
@@ -36,9 +43,11 @@ I change default port of Eureka(8761) only to test.
 Instances currently registered with Eureka
 
 Application	AMIs	Availability Zones	Status
-CUSTOMER	n/a (1)	(1)	UP (1) - 10.0.2.86:customer:8080
-PRODUCT	n/a (1)	(1)	UP (1) - 10.0.2.86:product:8181
-ZUUL-SERVER	n/a (1)	(1)	UP (1) - 10.0.2.86:zuul-server:8082````
+CUSTOMER	n/a (1)	(1)	UP (1) - 3f7ede771995:customer:8080
+PRODUCT	n/a (1)	(1)	UP (1) - d20fe17d69ba:product:8181
+SPRINGMONITOR	n/a (1)	(1)	UP (1) - ef4ecc97967e:springmonitor:7771
+ZUUL-SERVER	n/a (1)	(1)	UP (1) - ce1baa53068d:zuul-server:7772
+
 
 ## Acessando APIs
 

@@ -1,0 +1,58 @@
+version: '3.3'
+
+services:
+  customer:
+    build:
+      context: ./customer
+      dockerfile: Dockerfile
+    image: customer
+    ports:
+      - 8080:8080
+    environment:
+      - EUREKA_URI=http://eureka-server:7777
+    depends_on:
+      - eureka-server
+
+  eureka-server:
+    build:
+      context: ./eurekaservice
+      dockerfile: Dockerfile
+    image: eureka-server
+    ports:
+      - 7777:7777
+
+  spring-monitor:
+    build:
+      context: ./springmonitor
+      dockerfile: Dockerfile
+    image: spring-monitor
+    ports:
+      - 7771:7771
+    environment:
+      - EUREKA_URI=http://eureka-server:7777
+    depends_on:
+      - eureka-server
+
+  product:
+    build:
+      context: ./product
+      dockerfile: Dockerfile
+    image: product
+    ports:
+      - 8081:8081
+    environment:
+      - EUREKA_URI=http://eureka-server:7777
+    depends_on:
+      - eureka-server
+
+  zuulservice:
+    build:
+      context: ./zuulservice
+      dockerfile: Dockerfile
+    image: zuulservice
+    ports:
+      - 7772:7772
+    environment:
+      - EUREKA_URI=http://eureka-server:7777
+    depends_on:
+      - eureka-server
