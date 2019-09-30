@@ -56,3 +56,13 @@ services:
       - EUREKA_URI=http://eureka-server:7777
     depends_on:
       - eureka-server
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: customer
+    ports:
+      - 5432:5432
+            

@@ -1,26 +1,22 @@
 package br.com.zuulservice.springmonitor.controller;
 
+import java.util.List;
+
+import br.com.zuulservice.springmonitor.usecase.ListCustomersUsecase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
+   @Autowired
+   ListCustomersUsecase listCustomersUsecase;
 
-    private static final String CUSTOMERS[] ={
-        "Customer 1",
-                "Customer 2",
-                "Customer 3",
-                "Customer 4"};
-
-    @GetMapping
-    public List<String> findAll() {
-        return new ArrayList<String>(Arrays.asList(CUSTOMERS));
-    }
-
+   @GetMapping
+   public List<String> findAll() {
+      return listCustomersUsecase.findAll();
    }
+
+}
