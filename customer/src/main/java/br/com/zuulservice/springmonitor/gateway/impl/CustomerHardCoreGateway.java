@@ -17,6 +17,10 @@ public class CustomerHardCoreGateway implements CustomerGateway {
       return dummyCustomers();
    }
 
+   @Override public Customer createCustomer(Customer customer) {
+      return null;
+   }
+
    private List<Customer> dummyCustomers() {
       List<Customer> list = new ArrayList<>();
       Customer c1 = new Customer(1L,"Customer 1", "P");

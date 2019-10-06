@@ -65,4 +65,6 @@ services:
       POSTGRES_DB: customer
     ports:
       - 5432:5432
+    volumes:
+      - ./database:/var/lib/postgresql/data
             

@@ -19,4 +19,9 @@ public class CustomerPostgreeGateway implements CustomerGateway {
       return listCustomers;
    }
 
+   @Override
+   public Customer createCustomer(Customer c){
+      return customerRepository.save(c);
+   }
+
 }

@@ -3,15 +3,12 @@ package br.com.zuulservice.springmonitor.gateway.impl.repository.Entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-//@DiscriminatorColumn(name = "type", length = 1, discriminatorType = DiscriminatorType.STRING)
-//@DiscriminatorValue("P")
+@DiscriminatorColumn(name = "type", length = 1, discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("P")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +18,6 @@ public class Customer implements Serializable {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long idCustomer;
    private String name;
-   @Column(insertable=false, updatable=false)
+   @Column(insertable = false, updatable = false)
    private String type;
 }

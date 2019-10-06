@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-//@DiscriminatorValue(value = "J")
+@DiscriminatorValue(value = "J")
 @Data
 @EqualsAndHashCode
 public class CustomerJuridic extends Customer{

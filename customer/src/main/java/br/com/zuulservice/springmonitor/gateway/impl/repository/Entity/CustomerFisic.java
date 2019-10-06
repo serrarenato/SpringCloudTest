@@ -3,15 +3,23 @@ package br.com.zuulservice.springmonitor.gateway.impl.repository.Entity;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Entity
-///@DiscriminatorValue(value = "F")
+@DiscriminatorValue(value = "F")
 @Data
-@EqualsAndHashCode
-public class CustomerFisic extends Customer{
+@EqualsAndHashCode(callSuper = true)
+@ToString
+@NoArgsConstructor
+public class CustomerFisic extends Customer {
 
-      private String cpf;
+   private String cpf;
+
+   @Builder
+   public CustomerFisic(String cpf, String name, String type) {
+
+      super(null, name, type);
+      this.cpf = cpf;
+   }
 
 }

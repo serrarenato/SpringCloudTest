@@ -6,4 +6,5 @@ import br.com.zuulservice.springmonitor.gateway.impl.repository.Entity.Customer;
 
 public interface CustomerGateway {
    List<Customer> findAll();
+   Customer createCustomer(Customer customer);
 }
